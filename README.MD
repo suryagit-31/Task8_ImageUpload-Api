@@ -1,9 +1,20 @@
 # FastAPI Image Upload API
 
-A minimal FastAPI application that accepts an image upload and returns its format and dimensions.
+A minimal FastAPI application that accepts an image file and returns its format and dimensions as JSON.
 
 ---
 
+## Project Structure
+Task8_ImageUpload-Api/
+│── main.py
+│── requirements.txt
+│── README.md
+│── .gitignore
+
+yaml
+Copy code
+
+---
 
 ## Clone the Repository
 
@@ -12,58 +23,64 @@ git clone https://github.com/suryagit-31/Task8_ImageUpload-Api.git
 cd Task8_ImageUpload-Api
 
 
-### 1. Create and activate virtual environment
-```bash
+Setup & Run Locally
+1. Create and activate virtual environment
+bash
+Copy code
 python -m venv myenv
 myenv\Scripts\activate   # Windows
 
 
-## Setup & Run (Local)
-│── main.py
-│── requirements.txt
-│── .gitignore
-│── myenv/
 
-
-2.  Install Dependencies 
-
+2. Install dependencies
+bash
+Copy code
 pip install -r requirements.txt
-
-##
-pip install fastapi uvicorn pillow python-multipart
-
-3. Run the server
+3. Run the FastAPI server
+bash
+Copy code
 uvicorn main:app --reload
+Server runs at:
+Copy code
+http://127.0.0.1:8000
 
 
-Server will start at: http://127.0.0.1:8000
 
 API Endpoint
 POST /upload-image
-
 Accepts an image file
+
+Processes the image in memory
 
 Returns image metadata as JSON
 
 Sample Response
+json
+Copy code
 {
   "filename": "image.png",
   "format": "PNG",
   "width": 640,
   "height": 480
 }
-
 Testing
+Swagger UI (Recommended)
+Open:
 
-Open Swagger UI:
-
+arduino
+Copy code
 http://127.0.0.1:8000/docs
+Curl (Terminal)
+bash
+Copy code
+curl -X POST http://127.0.0.1:8000/upload-image \
+     -F "file=@image.png"
+Notes
+Images are processed in memory and not saved to disk
 
-
-Upload an image and view the response.
+Virtual environment is excluded from GitHub
 
 Tech Stack
-
 Python
 
 FastAPI

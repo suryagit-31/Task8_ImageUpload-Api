@@ -16,37 +16,34 @@ Copy code
 
 ---
 
-## Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/suryagit-31/Task8_ImageUpload-Api.git
 cd Task8_ImageUpload-Api
 
-
-Setup & Run Locally
+1.Setup & Run Locally
 1. Create and activate virtual environment
-bash
-Copy code
 python -m venv myenv
 myenv\Scripts\activate   # Windows
 
 
 
 2. Install dependencies
-bash
-Copy code
 pip install -r requirements.txt
+
+
 3. Run the FastAPI server
 bash
 Copy code
 uvicorn main:app --reload
-Server runs at:
-Copy code
-http://127.0.0.1:8000
+
+Server runs at: http://127.0.0.1:8000
 
 
 
-API Endpoint
+4.API Endpoint
+
 POST /upload-image
 Accepts an image file
 
@@ -56,20 +53,22 @@ Returns image metadata as JSON
 
 Sample Response
 json
-Copy code
 {
   "filename": "image.png",
   "format": "PNG",
   "width": 640,
   "height": 480
 }
-Testing
+
+
+5. Testing
 Swagger UI (Recommended)
 Open:
-
 arduino
 Copy code
 http://127.0.0.1:8000/docs
+
+
 Curl (Terminal)
 bash
 Copy code

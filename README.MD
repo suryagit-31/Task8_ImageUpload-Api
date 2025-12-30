@@ -4,11 +4,12 @@ A minimal FastAPI application that accepts an image upload and returns its forma
 
 ---
 
-## Setup & Run (Local)
-│── main.py
-│── requirements.txt
-│── .gitignore
-│── myenv/
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/suryagit-31/Task8_ImageUpload-Api.git
+cd Task8_ImageUpload-Api
 
 
 ### 1. Create and activate virtual environment
@@ -17,7 +18,15 @@ python -m venv myenv
 myenv\Scripts\activate   # Windows
 
 
-2. After Cloning and Activation of enviorment 
+## Setup & Run (Local)
+│── main.py
+│── requirements.txt
+│── .gitignore
+│── myenv/
+
+
+2.  Install Dependencies 
+
 pip install -r requirements.txt
 
 ##
